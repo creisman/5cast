@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "5Cast",
-  "version": "0.1",
+  "version": "0.3",
   
   "description": "This extension allows the casting of any non-restricted HTML5 video on the web.",
   

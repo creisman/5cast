@@ -1,5 +1,6 @@
 var cast = document.createElement('script');
-cast.src = "chrome-extension://eadnfneihhkhihghhphnmpbhdfjdeaah/cast.js";
+var id = chrome.runtime.id;
+cast.src = "chrome-extension://" + id + "/cast.js";
 document.head.appendChild(cast);
 
 var cast = document.createElement('script');
