@@ -8,6 +8,7 @@ var onRequestSessionSuccess = function(video, session) {
   var type = file.substr(file.lastIndexOf('.') + 1) || "mp4"; // Default to MP4
   var mediaInfo = new chrome.cast.media.MediaInfo(url, "video/" + type);
   var request = new chrome.cast.media.LoadRequest(mediaInfo);
+  console.log("Loading " + url);
   session.loadMedia(request,
      onMediaDiscovered.bind(this, video),
      onMediaError.bind(this));
@@ -31,8 +32,15 @@ var receiverListener = function(e) {
     var videos = document.getElementsByTagName('video');
     for (var i = 0; i < videos.length; i++) {
       var video = videos[i];
+      
+      if (!video.paused) {
+        console.log("Video already playing, offer to cast. Video " + video.currentSrc);
+        chrome.cast.requestSession(onRequestSessionSuccess.bind(this, video), onLaunchError);
+      }
 
+      console.log("Attaching to video " + video.currentSrc);
       video.addEventListener("play", function() {
+        console.log("playing");
         chrome.cast.requestSession(onRequestSessionSuccess.bind(this, video), onLaunchError);
       });
     }
