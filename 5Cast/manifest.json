@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "5Cast",
+  "version": "0.1",
+  
+  "description": "This extension allows the casting of any non-restricted HTML5 video on the web.",
+  
+  "author": "Conor Reisman (kdoglovesmath@gmail.com)",
+  "minimum_chrome_version": "32",
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+	"js": ["bootstrap.js"]
+  }],
+  "content_security_policy": "script-src 'self' https://www.gstatic.com/cv/js/sender/v1/cast_sender.js; object-src 'self'",
+  "web_accessible_resources": ["cast.js"]
+}
