@@ -12,9 +12,9 @@
 	  "js": ["bootstrap.js"]
   }],
   "icons": {
-    "128": "resources/icon128.png",
-    "16": "resources/icon16.png",
-    "48": "resources/icon48.png"
+    "128": "resources/icon128g.png",
+    "16": "resources/icon16g.png",
+    "48": "resources/icon48g.png"
   },
   "content_security_policy": "script-src 'self' https://www.gstatic.com/cv/js/sender/v1/cast_sender.js; object-src 'self'",
   "web_accessible_resources": ["cast.js"]
