@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "5Cast",
-  "version": "0.3",
+  "version": "0.4",
   
   "description": "This extension allows the casting of any non-restricted HTML5 video on the web.",
   
@@ -9,7 +9,8 @@
   "minimum_chrome_version": "32",
   "content_scripts": [{
     "matches": ["*://*/*"],
-	  "js": ["bootstrap.js"]
+	  "js": ["bootstrap.js"],
+    "all_frames": true
   }],
   "icons": {
     "128": "resources/icon128g.png",
